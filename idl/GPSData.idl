@@ -3,7 +3,19 @@
 
 #include "InterfaceDataTypes.idl"
 
-module GPSData{
+module GPS{
+    
+    struct GPSData
+    {
+        /// Longitude from GPS
+        double longitude;
+        /// Latitude from GPS
+        double latitude;
+        /// Variance of GPS Data
+        double variance;
+        /// Number of satellite
+        unsigned short satellite;
+    };
 
     /*!
      * @struct TimedGPSData
@@ -13,14 +25,8 @@ module GPSData{
     {
         /// Time stamp.
         RTC::Time tm;
-        /// Longitude from GPS
-        double longitude;
-        /// Latitude from GPS
-        double latitude;
-        /// Variance of GPS Data
-        double variance;
-        /// Number of satellites
-        int satellites;
+        /// GpsData
+        GPSData Data;
     };
 
 };
